@@ -9,6 +9,14 @@ function formatConfidence(value) {
   return `${(value * 100).toFixed(2)}%`;
 }
 
+function getPredictionStatus(prediction) {
+  const normalizedPrediction = (prediction || "").toLowerCase();
+  if (normalizedPrediction === "notumor") {
+    return { label: "normal", className: "status-normal" };
+  }
+  return { label: "tumor detected", className: "status-tumor-detected" };
+}
+
 export default function App() {
   const [rows, setRows] = useState([]);
 
@@ -127,22 +135,31 @@ export default function App() {
                 </td>
               </tr>
             ) : (
-              rows.map((row) => (
-                <tr key={row.id}>
-                  <td>
-                    <img className="thumb" src={row.previewUrl} alt={row.fileName} />
-                  </td>
-                  <td>{row.fileName}</td>
-                  <td>
-                    <span className={`status status-${row.status}`}>{row.status}</span>
-                  </td>
-                  <td>{row.prediction}</td>
-                  <td>{formatConfidence(row.confidence)}</td>
-                  <td className="explanation">
-                    {row.status === "error" ? row.error : row.explanation}
-                  </td>
-                </tr>
-              ))
+              rows.map((row) => {
+                const doneStatus =
+                  row.status === "done" ? getPredictionStatus(row.prediction) : null;
+                const statusClassName = doneStatus
+                  ? doneStatus.className
+                  : `status-${row.status}`;
+                const statusLabel = doneStatus ? doneStatus.label : row.status;
+
+                return (
+                  <tr key={row.id}>
+                    <td>
+                      <img className="thumb" src={row.previewUrl} alt={row.fileName} />
+                    </td>
+                    <td>{row.fileName}</td>
+                    <td>
+                      <span className={`status ${statusClassName}`}>{statusLabel}</span>
+                    </td>
+                    <td>{row.prediction}</td>
+                    <td>{formatConfidence(row.confidence)}</td>
+                    <td className="explanation">
+                      {row.status === "error" ? row.error : row.explanation}
+                    </td>
+                  </tr>
+                );
+              })
             )}
           </tbody>
         </table>

@@ -80,6 +80,8 @@ input[type="file"] {
   border: 1px solid #d8e6ff;
   border-radius: 12px;
   overflow: hidden;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 table {
@@ -117,9 +119,10 @@ tr:last-child td {
   display: inline-block;
   text-transform: capitalize;
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: bold;
   border-radius: 999px;
   padding: 4px 10px;
+  font-size: 10px;
 }
 
 .status-queued {
@@ -137,6 +140,16 @@ tr:last-child td {
   color: #0e7a49;
 }
 
+.status-normal {
+  background: #d8f5e8;
+  color: #0e7a49;
+}
+
+.status-tumor-detected {
+  background: #ffe0e0;
+  color: #a01f1f;
+}
+
 .status-error {
   background: #ffe0e0;
   color: #a01f1f;
@@ -144,6 +157,8 @@ tr:last-child td {
 
 .explanation {
   max-width: 420px;
+  font-size: 14px;
+  line-height: 1.5;
   white-space: pre-wrap;
 }
 
