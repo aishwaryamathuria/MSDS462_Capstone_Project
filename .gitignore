@@ -1,3 +1,9 @@
 *.DS_Store
 mri_dataset
 .ipynb_checkpoints
+.env
+__pycache__
+frontend/node_modules
+frontend/dist
+package-lock.json
+.venv

@@ -1,0 +1,154 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #0b2a5d;
+  background: #eef5ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #e8f2ff 0%, #f6faff 100%);
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.hero {
+  background: #0d47a1;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 24px rgba(13, 71, 161, 0.18);
+}
+
+.hero h1 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+}
+
+.hero p {
+  margin: 0;
+  opacity: 0.95;
+}
+
+.uploader {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d8e6ff;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.upload-label {
+  font-weight: 600;
+  color: #10479a;
+}
+
+input[type="file"] {
+  color: #174ea6;
+}
+
+.clear-btn {
+  margin-left: auto;
+  border: none;
+  background: #1976d2;
+  color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-btn:disabled {
+  background: #97bde8;
+  cursor: not-allowed;
+}
+
+.table-wrap {
+  margin-top: 18px;
+  background: #ffffff;
+  border: 1px solid #d8e6ff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #e3efff;
+  color: #0f3f87;
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #c9defa;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid #edf3ff;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.thumb {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #c8dcfb;
+}
+
+.status {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 0.86rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.status-queued {
+  background: #e7f0ff;
+  color: #1f5cb6;
+}
+
+.status-processing {
+  background: #d8ebff;
+  color: #1459b8;
+}
+
+.status-done {
+  background: #d8f5e8;
+  color: #0e7a49;
+}
+
+.status-error {
+  background: #ffe0e0;
+  color: #a01f1f;
+}
+
+.explanation {
+  max-width: 420px;
+  white-space: pre-wrap;
+}
+
+.empty-state {
+  text-align: center;
+  color: #4c6fa7;
+  padding: 30px 0;
+}
