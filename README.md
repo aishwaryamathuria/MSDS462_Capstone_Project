@@ -1,5 +1,9 @@
 # Brain Tumor Classification with Human-Readable MRI Explanations Using Deep Learning
 
+Magnetic Resonance Imaging (MRI) scans are commonly used by doctors to examine the brain and identify abnormal growths or tumors. The goal of this project is to build an AI system that can automatically analyze brain MRI images to classify MRI scans into four categories: glioma, meningioma, pituitary tumor, or normal, and then generate human-readable explanations describing the detected condition.
+We also developed a Flask API and a user interface that allow MRI images to be uploaded and analyzed interactively while giving flexibility for integration into existing medical diagnosis systems or insurance adjudication workflows to provide AI support in clinical review and decision-making.
+
+
 ## Project Structure
 
 - `backend/`: Flask API service to serves model inference and provide explanation endpoints.
