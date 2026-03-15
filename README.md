@@ -18,9 +18,7 @@ We also developed a Flask API and a user interface that allow MRI images to be u
 cd /Users/mathuria/Desktop/MSDS462_Capstone_Project
 python3.11 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
-pip install --force-reinstall numpy torch torchvision
-pip install flask pillow transformers accelerate sentencepiece safetensors
+python -m pip install -r requirements.txt
 cd backend
 python app.py
 ```
